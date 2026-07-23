@@ -3,7 +3,7 @@ set -euo pipefail
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DIST_DIR="$PROJECT_ROOT/dist"
-ARCHIVE="$DIST_DIR/CodexUsageWidget-0.1.0-macos.zip"
+ARCHIVE="$DIST_DIR/CodexUsageWidget-0.1.1-macos.zip"
 
 "$PROJECT_ROOT/scripts/build.sh"
 mkdir -p "$DIST_DIR"

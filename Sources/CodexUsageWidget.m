@@ -276,7 +276,6 @@ static NSString *const CodexExecutable = @"/Applications/ChatGPT.app/Contents/Re
     }
 
     NSInteger used = lround(usedNumber.doubleValue);
-    NSInteger remaining = MAX(0, 100 - used);
     self.progress.value = used;
     NSTimeInterval remainingSeconds = MAX(0, resetNumber.doubleValue - NSDate.date.timeIntervalSince1970);
     NSInteger totalHours = (NSInteger)floor(remainingSeconds / 3600.0);
@@ -284,7 +283,7 @@ static NSString *const CodexExecutable = @"/Applications/ChatGPT.app/Contents/Re
     NSInteger hours = totalHours % 24;
     NSString *time = days > 0 ? [NSString stringWithFormat:@"%ldd %02ldh", days, hours]
                               : [NSString stringWithFormat:@"%ldh", hours];
-    self.usageLabel.stringValue = [NSString stringWithFormat:@"%ld%% 남음  %@", remaining, time];
+    self.usageLabel.stringValue = [NSString stringWithFormat:@"%ld%% 사용  %@", used, time];
 }
 
 - (void)renderError {
